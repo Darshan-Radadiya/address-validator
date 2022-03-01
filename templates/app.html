@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/app.css">
+</head>
+<body>
+    <div class="heading">
+        <h1>Address Validator</h1>
+    </div>
+    <form action="/" method="post">
+        <div class="form">
+            <table>
+                <tr><td> <select name="country" id="country"> <option value="">Country</option> <option name={{ country }}>{{ country }}</option> </select></td></tr>
+                <tr><td><input type="text" name="name" placeholder="Street address line 1" /></td></tr> 
+                <tr><td><input type="text" name="name" placeholder="Street address line 2" /></td></tr> 
+                <tr><td><input type="text" name="name" placeholder="City" /></td></tr>
+                <tr><td><input type="text" name="name" placeholder="State" /></td></tr>
+                <tr><td><input type="text" name="name" placeholder="Postal / Zip  code" /></td></tr>
+                <tr><td> <button type="submit"> Search </button> </td></tr>
+            </table>
+        </div>
+    </form>
+    </div>
+</body>
+
+</html>
