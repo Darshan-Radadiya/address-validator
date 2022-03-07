@@ -1,25 +1,52 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="../static/app.css">
+    <script>
+        var jsonfile = JSON.parse({jsonfile});
+      </script>
 </head>
+
 <body>
     <div class="heading">
         <h1>Address Validator</h1>
     </div>
-    <form action="/" method="post">
+    <form action="/result_page" method="POST">
         <div class="form">
             <table>
-                <tr><td> <select name="country" id="country"> <option value="">Country</option> <option name={{ country }}>{{ country }}</option> </select></td></tr>
-                <tr><td><input type="text" name="name" placeholder="Street address line 1" /></td></tr> 
-                <tr><td><input type="text" name="name" placeholder="Street address line 2" /></td></tr> 
-                <tr><td><input type="text" name="name" placeholder="City" /></td></tr>
-                <tr><td><input type="text" name="name" placeholder="State" /></td></tr>
-                <tr><td><input type="text" name="name" placeholder="Postal / Zip  code" /></td></tr>
-                <tr><td> <button type="submit"> Search </button> </td></tr>
+                <tr>
+                    <td> <select name="country" id="country">
+                            <option value="">Country</option> {% if countries %}
+                            {% for country in countries %}
+                            <option name={{ country }}>{{ country }}</option>
+                            {% endfor %}
+                            {% endif %}
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="Address_line_1" placeholder="Street address line 1" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="Address_Line_2" placeholder="Street address line 2" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="county" placeholder="County" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="State" placeholder="State" /></td>
+                </tr>
+                <tr>
+                    <td><input type="text" name="Zipcode" placeholder="Postal / Zip  code" /></td>
+                </tr>
+                <tr>
+                    <td><input type="number" name="ph_no" placeholder="Phone number" /></td>
+                </tr>
+                <tr>
+                    <td> <button type="submit" > Search </button> </td>
+                </tr>
             </table>
         </div>
     </form>
     </div>
 </body>
-
 </html>
