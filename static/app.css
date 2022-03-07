@@ -31,3 +31,11 @@ button {
     padding: 20px;
     border-radius: 5px;
 }
+
+.show_address{
+    align-items: center;
+    text-align: center;
+    font-size: xx-large;
+    margin: 10% 10% 10% 10%;
+    font-family: cursive;
+}
