@@ -4,7 +4,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # read Json file
-with open('./Address_details.json','r') as file:
+with open('C:/Users/omkar/desktop/address-validator/Address_details.json','r') as file:
     data = json.load(file)
 
 @app.route('/')
@@ -27,4 +27,7 @@ def show_address():
     address = Country  + State +  Address_line_1 + Address_Line_2 + Zipcode + ph_no 
 
     return render_template('result.html', title="Result Page", Address = address)
+
+if __name__ == '__main__':
+    app.run()
 
