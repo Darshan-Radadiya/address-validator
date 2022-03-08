@@ -16,7 +16,8 @@
             <table>
                 <tr>
                     <td> <select name="country" id="country">
-                            <option value="">Country</option> {% if countries %}
+                            <option value=""> Country </option>
+                            {% if countries %}
                             {% for country in countries %}
                             <option name={{ country }}>{{ country }}</option>
                             {% endfor %}
@@ -30,7 +31,7 @@
                     <td><input type="text" name="Address_Line_2" placeholder="Street address line 2" /></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="county" placeholder="County" /></td>
+                    <td><input type="text" name="County" placeholder="County" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="State" placeholder="State" /></td>
