@@ -1,26 +1,33 @@
 <!DOCTYPE html>
+
 <head>
     <link rel="stylesheet" type="text/css" href="../static/app.css">
-    <script>
-        address_match = 'true'
-    </script>
 </head>
 
 <body>
+<div class="row" >
     <div class="show_address">
-            <h1> Address </h1>
-            <p class="show_address">   {{Address_line_1_value}}    </p> 
-            <p class="show_address">   {{Address_Line_2_value}}  </p>      
-            <p class="show_address">   {{State_value}}  </p>      
-            <p class="show_address">   {{County_value}}  </p>      
-            <p class="show_address">   {{Zipcode_value}}  </p>      
-            <p class="show_address">   {{Country_value}}  </p>      
-            <p class="show_address">   {{ph_no_value}}  </p>   
-    
-        {% if address_match %}<h1> Valid Address </h1> {% endif %}
-        {% if address_match == false %} <h1> InValid Address </h1> {% endif %}
+        <h1> Address </h1>
+        <p> {{Address_line_1_value}} </p>
+        <p> {{Address_Line_2_value}} </p>
+        <p> {{State_value}} </p>
+        <p> {{County_value}} </p>
+        <p> {{Zipcode_value}} </p>
+        <p> {{Country_value}} </p>
+        <p> {{ph_no_value}} </p>
     </div>
+    
+    <div class="msg_col"> 
+        {% if address_match %}<h2> Valid Address </h2> {% endif %}
+        {% if address_match == false %} <h2> InValid Address </h2> {% endif %}
+    </div>
+    
+    {% if matching %} 
+        <div class="mtc_col">
+            <h3>Matching address:</h3>
+                <p> {{matching}} </p>
+        </div> 
+    {% endif %}
+</div>
 </body>
 </html>
-
-
