@@ -8,9 +8,20 @@
     <script>
         function myFunction()
         {
-            if(document.getElementById("country").value == "India" || document.getElementById("country").value == "Brazil" ||document.getElementById("country").value == "Australia" ||document.getElementById("country").value == "Canada")
+            if(document.getElementById("country").value == "India" || document.getElementById("country").value == "Brazil" ||document.getElementById("country").value == "Australia" ||document.getElementById("country").value == "Canada"
+            )
             {
                 document.getElementById("county").disabled = true;
+            }
+        }
+    </script>
+
+    <script>
+        function disable_state()
+        {
+            if(document.getElementById("country").value == "Canada")
+            {
+                document.getElementById("state").disabled = true;
             }
         }
     </script>
@@ -33,16 +44,16 @@
                         </select></td>
                 </tr>
                 <tr>
-                    <td><input  type="text" name="Address_line_1" placeholder="Street address line 1" /></td>
+                    <td><input  type="text" name="Address_line_1"onclick="disable_state()" placeholder="Street address line 1" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="Address_Line_2" placeholder="Street address line 2" /></td>
                 </tr>
                 <tr>
-                    <td><input id="county" type="text" name="county" onclick="myFunction(county.value)" placeholder="County"/></td>
+                    <td><input id="county" type="text" name="county" onclick="myFunction()" placeholder="County"/></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="State" placeholder="State" /></td>
+                    <td><input id="state" type="text" name="State" placeholder="State" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="Zipcode" placeholder="Postal / Zip  code" /></td>
