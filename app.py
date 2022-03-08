@@ -5,7 +5,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # read Json file
-with open('./Address_details.json', 'r') as file:
+with open('C:/Users/omkar/desktop/address-validator/Address_details.json', 'r') as file:
     data = json.load(file)
 
 @app.route('/')
@@ -43,3 +43,6 @@ def show_address():
             matching_add = ", ".join(i.values())
 
     return render_template('result.html', title="Result Page", Address_line_1_value=Address_line_1, Address_Line_2_value=Address_Line_2, State_value=State, County_value=County, Zipcode_value=Zipcode, Country_value=Country, ph_no_value=ph_no, address_match = match_found, matching = matching_add)
+
+if __name__ == '__main__':
+    app.run(debug=True)

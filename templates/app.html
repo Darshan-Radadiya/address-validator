@@ -8,7 +8,21 @@
     <script>
         function myFunction()
         {
-            document.getElementById("county").disabled = true;
+            if(document.getElementById("country").value == "India" || document.getElementById("country").value == "Brazil" ||document.getElementById("country").value == "Australia" ||document.getElementById("country").value == "Canada"
+            )
+            {
+                document.getElementById("county").disabled = true;
+            }
+        }
+    </script>
+
+    <script>
+        function disable_state()
+        {
+            if(document.getElementById("country").value == "United Kingdom")
+            {
+                document.getElementById("state").disabled = true;
+            }
         }
     </script>
 </head>
@@ -21,26 +35,26 @@
         <div class="form">
             <table>
                 <tr>
-                    <td> <select name="country" id="country">
-                            <option value=""> Country </option>
-                            {% if countries %}
+                    <td> <select name="country" id="country" onclick="disable_state()">
+                            <option value="">Country</option> {% if countries %}
                             {% for country in countries %}
                             <option name={{ country }}>{{ country }}</option>
                             {% endfor %}
                             {% endif %}
-                        </select></td>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
-                    <td><input  type="text" name="Address_line_1" placeholder="Street address line 1" /></td>
+                    <td><input  type="text" name="Address_line_1" onclick="myFunction()"  placeholder="Street address line 1" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="Address_Line_2" placeholder="Street address line 2" /></td>
                 </tr>
                 <tr>
-                    <td><input id="county" type="text" name="county" onclick="myFunction(county.value)" placeholder="County"/></td>
+                    <td><input id="county" type="text" name="county" placeholder="County"/></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="State" placeholder="State" /></td>
+                    <td><input id="state" type="text" name="State" placeholder="State" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="Zipcode" placeholder="Postal / Zip  code" /></td>
