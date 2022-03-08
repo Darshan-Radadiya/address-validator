@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" type="text/css" href="../static/app.css">
+    <script>
+        address_match = 'true'
+    </script>
 </head>
 
 <body>
+    <div class="show_address">
+            <h1> Address </h1>
+            <p class="show_address">   {{Address_line_1_value}}    </p> 
+            <p class="show_address">   {{Address_Line_2_value}}  </p>      
+            <p class="show_address">   {{State_value}}  </p>      
+            <p class="show_address">   {{County_value}}  </p>      
+            <p class="show_address">   {{Zipcode_value}}  </p>      
+            <p class="show_address">   {{Country_value}}  </p>      
+            <p class="show_address">   {{ph_no_value}}  </p>   
     
-    <div class="form">
-            <p class="show_address">{{Address}}</p>
-    </form>
+        {% if address_match %}<h1> Valid Address </h1> {% endif %}
+        {% if address_match == false %} <h1> InValid Address </h1> {% endif %}
+    </div>
 </body>
 </html>
 
