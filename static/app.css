@@ -41,7 +41,6 @@ button {
 .show_address{
     align-items: center;
     text-align: center;
-    font-size: xx-large;
-    margin: 10% 10% 10% 10%;
+    font-size: large;
     font-family: cursive;
 }
