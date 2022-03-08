@@ -43,4 +43,36 @@ button {
     text-align: center;
     font-size: large;
     font-family: cursive;
+    width: 33%;
+    padding: 10px;
+    float: left;
+    border: 2px solid green;
+    border-radius: 10px;
+    height: 500px;
 }
+.row:after{display: table;}
+
+.msg_col {
+    width: 33%;
+    padding: 120px;
+    height: 100px;
+    float: left;
+    border: 2px solid green;
+    border-radius: 10px;
+    margin: 120px 5px 5px 5px;
+}
+
+.mtc_col{
+    width: 33%;
+    height: 500px;
+    padding: 10px;
+    float: left;
+    border: 2px solid green;
+    border-radius: 10px;
+    text-align: left;
+    padding: 5px 50px 5px 20px;
+}
+
+* {
+    box-sizing: border-box;
+  }
