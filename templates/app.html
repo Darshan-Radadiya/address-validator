@@ -4,7 +4,13 @@
     <link rel="stylesheet" type="text/css" href="../static/app.css">
     <script>
         var jsonfile = JSON.parse({jsonfile});
-      </script>
+     </script>
+    <script>
+        function myFunction()
+        {
+            document.getElementById("county").disabled = true;
+        }
+    </script>
 </head>
 
 <body>
@@ -25,13 +31,13 @@
                         </select></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="Address_line_1" placeholder="Street address line 1" /></td>
+                    <td><input  type="text" name="Address_line_1" placeholder="Street address line 1" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="Address_Line_2" placeholder="Street address line 2" /></td>
                 </tr>
                 <tr>
-                    <td><input type="text" name="County" placeholder="County" /></td>
+                    <td><input id="county" type="text" name="county" onclick="myFunction(county.value)" placeholder="County"/></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="State" placeholder="State" /></td>
