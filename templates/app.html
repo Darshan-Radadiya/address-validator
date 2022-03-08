@@ -8,7 +8,10 @@
     <script>
         function myFunction()
         {
-            document.getElementById("county").disabled = true;
+            if(document.getElementById("country").value == "India")
+            {
+                document.getElementById("county").disabled = true;
+            }
         }
     </script>
 </head>
@@ -22,8 +25,7 @@
             <table>
                 <tr>
                     <td> <select name="country" id="country">
-                            <option value=""> Country </option>
-                            {% if countries %}
+                            <option value="">Country</option> {% if countries %}
                             {% for country in countries %}
                             <option name={{ country }}>{{ country }}</option>
                             {% endfor %}
