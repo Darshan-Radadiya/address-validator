@@ -8,17 +8,11 @@
     <script>
         function myFunction()
         {
-            if(document.getElementById("country").value == "India" || document.getElementById("country").value == "Brazil" ||document.getElementById("country").value == "Australia" ||document.getElementById("country").value == "Canada"
-            )
+            if(document.getElementById("country").value == "India" ||document.getElementById("country").value == "Germany" || document.getElementById("country").value == "Brazil" ||document.getElementById("country").value == "Australia" ||document.getElementById("country").value == "Canada"
+            || document.getElementById("country").value == "Spain" || document.getElementById("country").value == "Mexico")
             {
                 document.getElementById("county").disabled = true;
             }
-        }
-    </script>
-
-    <script>
-        function disable_state()
-        {
             if(document.getElementById("country").value == "United Kingdom")
             {
                 document.getElementById("state").disabled = true;
@@ -35,7 +29,7 @@
         <div class="form">
             <table>
                 <tr>
-                    <td> <select name="country" id="country" onclick="disable_state()">
+                    <td> <select name="country" id="country" onclick="myFunction()">
                             <option value="">Country</option> {% if countries %}
                             {% for country in countries %}
                             <option name={{ country }}>{{ country }}</option>
@@ -45,7 +39,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td><input  type="text" name="Address_line_1" onclick="myFunction()"  placeholder="Street address line 1" /></td>
+                    <td><input  type="text" name="Address_line_1"  placeholder="Street address line 1" /></td>
                 </tr>
                 <tr>
                     <td><input type="text" name="Address_Line_2" placeholder="Street address line 2" /></td>
