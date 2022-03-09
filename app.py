@@ -5,14 +5,15 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 # read Json file
-with open('C:/Users/omkar/desktop/address-validator/Address_details.json', 'r') as file:
+with open('./Address_details.json', 'r') as file:
+# with open('C:/Users/omkar/desktop/address-validator/Address_details.json', 'r') as file:
     data = json.load(file)
 
 @app.route('/')
 def home():
     # Get the list of countries from the json file.
     countries = [a_dict["Country"] for a_dict in data]
-    return render_template('app.html', title="Home Page", countries=set(countries))
+    return render_template('app.html', title="Home Page", countries=sorted(set(countries)))
 
 @app.route('/result_page',  methods=["POST"])
 def show_address():
@@ -34,8 +35,6 @@ def show_address():
 
     user_entered_address = {"Address_line_1":Address_line_1.title(), "Address_Line_2":Address_Line_2.title(), "State":State.title(), "County":County.title(), "Zipcode":Zipcode.title(), "Country":Country, "ph_no":ph_no}    
 
-    if Country == "USA":
-        user_entered_address.pop("County")
     for i  in data:
         if i == user_entered_address:
             match_found = TRUE
