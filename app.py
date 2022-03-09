@@ -31,15 +31,22 @@ def show_address():
         County = ""
     
     match_found = False
-    matching_add = ""
+    matching_address = ""
+    matching_add = []
 
-    user_entered_address = {"Address_line_1":Address_line_1.title(), "Address_Line_2":Address_Line_2.title(), "State":State.title(), "County":County.title(), "Zipcode":Zipcode.title(), "Country":Country, "ph_no":ph_no}    
+    if (State == None):
+        State = ""
+    if (County == None):
+        County = ""
+
+    user_entered_address = {"Address_line_1":Address_line_1.title(), "Address_Line_2":Address_Line_2.title(), "State":State.title(), "County":County.title(), "Zipcode":Zipcode.upper(), "Country":Country, "ph_no":ph_no}    
 
     for i  in data:
         if i == user_entered_address:
-            match_found = TRUE
-        if i["Address_line_1"] == Address_line_1.title():
-            matching_add = ", ".join(i.values())
+            match_found = True
+        if i["Address_line_1"] == Address_line_1.title() or i["Address_Line_2"] == Address_Line_2.title() :
+            matching_address = ", ".join(i.values())
+            matching_add.append(matching_address)
 
     return render_template('result.html', title="Result Page", Address_line_1_value=Address_line_1, Address_Line_2_value=Address_Line_2, State_value=State, County_value=County, Zipcode_value=Zipcode, Country_value=Country, ph_no_value=ph_no, address_match = match_found, matching = matching_add)
 

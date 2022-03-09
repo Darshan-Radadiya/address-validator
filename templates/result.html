@@ -19,14 +19,16 @@
     </div>
     
     <div class="msg_col"> 
-        {% if address_match %}<h2> Valid Address </h2> {% endif %}
-        {% if address_match == false %} <h2> InValid Address </h2> {% endif %}
+        {% if address_match %}<h2> Address Found </h2> {% endif %}
+        {% if address_match == false %} <h2> Address Not Found </h2> {% endif %}
     </div>
     
     {% if matching %} 
         <div class="mtc_col">
             <h3>Matching address:</h3>
-                <p> {{matching}} </p>
+            {% for match in matching %}
+                <p> {{match}} </p>
+            {% endfor %}
         </div> 
     {% endif %}
 </div>
