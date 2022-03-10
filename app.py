@@ -44,7 +44,7 @@ def show_address():
     for i  in data:
         if i == user_entered_address:
             match_found = True
-        if i["Address_line_1"] == Address_line_1.title() or i["Address_Line_2"] == Address_Line_2.title() :
+        if i["Address_line_1"] == Address_line_1.title() or i["Address_Line_2"] == Address_Line_2.title()  or i["Country"] == Country:
             matching_address = ", ".join(i.values())
             matching_add.append(matching_address)
 
